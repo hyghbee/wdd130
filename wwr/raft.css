@@ -14,33 +14,41 @@ body {
     background-color: var(--accent1-color);
 }
 
-/* Header */
+/* Header - Grid + Flex Layout */
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
+    padding: 1rem 2rem;
     background-color: var(--secondary-color);
-    padding: 15px 20px;
+    color: white;
 }
 
+/* Logo */
 .logo {
-    height: 60px;
+    max-width: 150px;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
+    font-weight: 500;
     color: var(--accent2-color);
-    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -77,6 +85,7 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    color: white;
 }
 
 .hero article img {
@@ -91,8 +100,25 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-/* Sections */
-section {
+/* History Section (Grid Layout for Text & Image) */
+.history {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.history img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Adventure Section - Flexbox with Figure & Caption */
+.adventure {
     text-align: center;
     padding: 40px 20px;
     background-color: white;
@@ -100,17 +126,53 @@ section {
     border-radius: 8px;
 }
 
-.adventure .gallery {
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
-.adventure .gallery img {
-    width: 200px;
+.gallery figure {
+    text-align: center;
+    width: 180px;
+}
+
+.gallery img {
+    width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.gallery figcaption {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Make the history section stack on smaller screens */
+    .history {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .history img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    /* Adjust adventure images for small screens */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery figure {
+        width: 80%;
+    }
 }
 
 /* Footer */
@@ -127,13 +189,10 @@ footer p {
 
 .social-media a {
     margin: 0 10px;
+    text-decoration: none;
 }
 
 .social-media img {
     width: 30px;
     height: auto;
-}
-
-.social-media a {
-    text-decoration: none;
 }
