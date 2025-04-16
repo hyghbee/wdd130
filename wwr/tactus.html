@@ -7,9 +7,11 @@
     <meta name="description" content="Get in touch with Splash Whitewater Rafting. Find our contact details, location, team info, and send us a message.">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="raft.css">
+    <link rel="stylesheet" href="rafting.css">
 </head>
 <body>
 
@@ -26,35 +28,35 @@
     </header>
 
     <main>
-        <section class="contact-info">
+        <section class="contact-info section-padding">
             <h1>Contact Us</h1>
             <p><strong>Address:</strong> 5-3 Rasaki Balogun St, Lekki Penninsula II, Lekki 106104, Lagos</p>
             <p><strong>Phone:</strong> +234 800 123 4567 | +234 800 765 4321</p>
             <p><strong>Email:</strong> info@splashrafting.com</p>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7522261185!2d3.5216281732122288!3d6.4258715242938464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6431e09c769%3A0x91f5093944920d43!2s5-3%20Rasaki%20Balogun%20St%2C%20Lekki%20Penninsula%20II%2C%20Lekki%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1744444413412!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7522261185!2d3.5216281732122288!3d6.4258715242938464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6431e09c769%3A0x91f5093944920d43!2s5-3%20Rasaki%20Balogun%20St%2C%20Lekki%20Penninsula%20II%2C%20Lekki%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1744444413412!5m2!1sen!2sng" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
 
-        <section class="employees">
+        <section class="employees section-padding">
             <h2>Meet Our Team</h2>
             <div class="employee-gallery">
                 <figure>
-                    <img src="employee1.jpg" alt="Emily - Adventure Guide">
+                    <img src="employee1.jpg" alt="Emily - Adventure Guide" class="img-rounded">
                     <figcaption>Emily – Lead Adventure Guide</figcaption>
                 </figure>
                 <figure>
-                    <img src="employee2.jpg" alt="James - Safety Officer">
+                    <img src="employee2.jpg" alt="James - Safety Officer" class="img-rounded">
                     <figcaption>James – Chief Safety Officer</figcaption>
                 </figure>
                 <figure>
-                    <img src="employee3.jpg" alt="Sarah - Customer Support">
+                    <img src="employee3.jpg" alt="Sarah - Customer Support" class="img-rounded">
                     <figcaption>Sarah – Customer Support Specialist</figcaption>
                 </figure>
             </div>
         </section>
 
-        <section class="contact-form">
+        <section class="contact-form section-padding">
             <h2>Send Us a Message</h2>
             <form action="#" method="post">
                 <label for="name">Name:</label>
@@ -64,14 +66,20 @@
                 <input type="email" id="email" name="email" required>
 
                 <p>Purpose of Message:</p>
-                <label><input type="radio" name="purpose" value="general" required> General Inquiry</label><br>
-                <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label><br>
-                <label><input type="radio" name="purpose" value="website"> Website Suggestion</label><br>
+                <input type="radio" id="general" name="purpose" value="general" required>
+                <label for="general">General Inquiry</label><br>
+
+                <input type="radio" id="reservation" name="purpose" value="reservation">
+                <label for="reservation">Reservation Question</label><br>
+
+                <input type="radio" id="website" name="purpose" value="website">
+                <label for="website">Website Suggestion</label><br>
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <label><input type="checkbox" name="subscribe"> Please subscribe me to the monthly newsletter</label><br>
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Please subscribe me to the monthly newsletter</label><br>
 
                 <button type="submit">Submit Message</button>
             </form>
